@@ -25,6 +25,9 @@
       "@/*": [
         "./*"
       ],
+      "@/config/*": [
+        "./config/*"
+      ],
       "@/zodAutoGenSchemas": [
         "./prisma/zod/index"
       ]

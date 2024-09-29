@@ -18,7 +18,7 @@ generator zod {
 datasource db {
   provider  = "postgresql"
   url       = env("DATABASE_URL")
-  directUrl = env("DIRECT_URL")
+  // directUrl = env("DIRECT_URL")
   // directUrl = env("DATABASE_URL_UNPOOLED")
 }
 
@@ -26,7 +26,9 @@ model User {
   id String @id @default(uuid())
   username String @unique
   imageUrl String @db.Text
+  email String @unique
   // externalUserId is clerk's userId
+  password      String @password @omit
   externalUserId String @unique
   workspaces Workspace[]
   createdAt DateTime @default(now())

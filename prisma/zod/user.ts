@@ -5,6 +5,12 @@ export const userSchema = z.object({
   id: z.string(),
   username: z.string(),
   imageUrl: z.string(),
+  email: z.string(),
+  /**
+   * @password
+   * @omit
+   */
+  password: z.string(),
   externalUserId: z.string(),
   createdAt: z.date(),
   updatedAt: z.date(),
